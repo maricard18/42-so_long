@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/14 10:53:00 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/16 13:34:59 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,61 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include "./get_next_line/get_next_line.h"
 
-#define BUFFER_SIZE 1024
-
-int	validate_map(int fd, char *str, char *line)
-{
-	int	i;
-	int	l;
-
-	i = 0;
-	l = line_counter(fd, str);
-	if (l < 2)
-		return (0);
-	return (l);
-}
-
-int	line_counter(int fd, char *str)
+int	line_counter(int fd)
 {
 	int		i;
 	char	*buf;
 
 	i = 0;
-	buf = malloc(sizeof(char) * (BUFFER_SIZE) + 1);
-	if (!buf)
-		return (0);
-	read(fd, buf, BUFFER_SIZE);
-	while (buf)
+	while (1)
 	{
-		if (buf == '\n')
-			i++;
-		buf++;
+		buf = get_next_line(fd);
+		if (!buf)
+			return (i);
+		i++;
 	}
 	return (i);
+}
+
+char	**map_array(int fd, int lines)
+{
+	char	**map;
+	char	*temp;
+
+	map = malloc(sizeof(char *) * (lines + 1));
+	if (!map)
+		return (0);
+	while (1)
+	{
+		temp = get_next_line(fd);
+		if (!temp)
+			return (map);
+		*map = temp;
+		map++;
+	}
+	return (map);
 }
 
 int	main(int argc, char **argv)
 {
 	int		fd;
-	char	*line;
-	int		l;
+	int		lines;
+	char	**map;
 
+	(void)argc;
 	fd = open(argv[1], O_RDONLY);
-	line = get_next_line(fd);
-	l = line_counter(fd, argv[1]) + 1;	// +1 for the new line
-	while (l > 0)
+	lines = line_counter(fd);
+	close(fd);
+	fd = open(argv[1], O_RDONLY);
+	map = map_array(fd, lines);
+	while (*map)
 	{
-		validate_map(fd, argv[1], line);
-		l--;
+		printf("%s\n", *map);
+		map++;
 	}
-	if (1)
-		ft_printf("Valid Map!");
-	else
-		ft_printf("Error :(");
+	printf("\nJob Done!\n\n");
+	close(fd);
+	return (0);
 }
