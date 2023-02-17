@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_map.c                                     :+:      :+:    :+:   */
+/*   map_array.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/16 13:34:59 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:35:51 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "./get_next_line/get_next_line.h"
+#include "../so_long.h"
 
 int	line_counter(int fd)
 {
@@ -26,10 +22,12 @@ int	line_counter(int fd)
 	{
 		buf = get_next_line(fd);
 		if (!buf)
+		{
+			free(buf);
 			return (i);
+		}
 		i++;
 	}
-	return (i);
 }
 
 char	**map_array(int fd, int lines)
@@ -44,26 +42,27 @@ char	**map_array(int fd, int lines)
 	{
 		temp = get_next_line(fd);
 		if (!temp)
+		{
+			free(temp);
 			return (map);
+		}
 		*map = temp;
 		map++;
 	}
-	return (map);
 }
 
-int	main(int argc, char **argv)
+int	map_array_validations(char *str)
 {
 	int		fd;
 	int		lines;
 	char	**map;
 
-	(void)argc;
-	fd = open(argv[1], O_RDONLY);
+	fd = open(str, O_RDONLY);
 	lines = line_counter(fd);
 	close(fd);
-	fd = open(argv[1], O_RDONLY);
+	fd = open(str, O_RDONLY);
 	map = map_array(fd, lines);
-	while (*map)
+	while (**map)
 	{
 		printf("%s\n", *map);
 		map++;
