@@ -6,14 +6,11 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:35:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/20 12:09:26 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:51:42 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
-#include "../libft/libft.h"
-#include "../libft/ft_printf/ft_printf.h"
-#include "../libft/get_next_line/get_next_line.h"
+#include "so_long.h"
 
 int	dot_ber_validation(char *str, int i)
 {

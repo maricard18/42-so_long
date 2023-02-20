@@ -6,11 +6,11 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/20 13:37:59 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:51:53 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	line_counter(int fd)
 {

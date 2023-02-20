@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/20 12:05:46 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:04:50 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # include <fcntl.h>
 
 // Libft library
-# include "./libft/libft.h"
-# include "./libft/ft_printf/ft_printf.h"
-# include "./libft/get_next_line/get_next_line.h"
+# include "libft.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 // Functions
 // MapValidations

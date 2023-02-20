@@ -6,7 +6,7 @@
 #    By: maricard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 16:59:07 by maricard          #+#    #+#              #
-#    Updated: 2023/02/14 09:22:07 by maricard         ###   ########.fr        #
+#    Updated: 2023/02/20 13:50:40 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ RM = rm -f
 CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
+
+INCLUDES = ../includes
 
 SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcpy.c ft_memmove.c  \
@@ -37,7 +39,7 @@ ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstclear.c ft_lstmap.c
 BONUS-OBJ = $(BONUS:.c=.o)
 
 %.o:		%.c
-			$(CC) -c $(CFLAGS) $^ -o $@
+			$(CC) -c $(CFLAGS) $^ -o $@ -I $(INCLUDES)
 
 all:		$(NAME)
 		
