@@ -6,12 +6,11 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/20 12:25:09 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:44:51 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "./libft/ft_printf/ft_printf.h"
 
 int	main(int argc, char **argv)
 {
@@ -27,6 +26,7 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_printf("Good job!");
+	map_array_validations(argv[1]);
 
 //	map_array_validations(argv[1]);
 }
