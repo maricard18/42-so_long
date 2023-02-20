@@ -6,13 +6,13 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 10:43:04 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/06 14:48:07 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:38:08 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strchr(char *buf, char c)
+int	ft_string_chr(char *buf, char c)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ int	ft_strchr(char *buf, char c)
 	return (0);
 }
 
-int	ft_strlen(char *str)
+int	ft_string_len(char *str)
 {
 	int	i;
 
@@ -38,7 +38,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *str1, char *str2)
+char	*ft_string_join(char *str1, char *str2)
 {
 	int		i;
 	int		a;
@@ -46,8 +46,8 @@ char	*ft_strjoin(char *str1, char *str2)
 
 	if (!str1)
 		return (0);
-	i = ft_strlen(str1);
-	a = ft_strlen(str2);
+	i = ft_string_len(str1);
+	a = ft_string_len(str2);
 	str = malloc(sizeof(char) * ((i + a) + 1));
 	if (!str)
 		return (0);

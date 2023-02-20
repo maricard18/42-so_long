@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:13:49 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/10 10:36:14 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:37:06 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ char	*ft_get_line(char *stash);
 char	*ft_remove_line(char *stash);
 
 //Utility functions
-int		ft_strchr(char *buf, char c);
-char	*ft_strjoin(char *str1, char *str2);
-int		ft_strlen(char *str);
+int		ft_string_chr(char *buf, char c);
+char	*ft_string_join(char *str1, char *str2);
+int		ft_string_len(char *str);
 
 #endif

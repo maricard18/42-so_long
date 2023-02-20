@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   map_format.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/20 12:05:46 by maricard         ###   ########.fr       */
+/*   Created: 2023/02/20 12:27:27 by maricard          #+#    #+#             */
+/*   Updated: 2023/02/20 12:34:56 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	SO_LONG_H
-# define SO_LONG_H
-
-// C Libraries
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-
-// Libft library
-# include "./libft/libft.h"
-# include "./libft/ft_printf/ft_printf.h"
-# include "./libft/get_next_line/get_next_line.h"
-
-// Functions
-// MapValidations
-int		map_array_validations(char *str);
-int		extension_validation(char *str);
-
-#endif
+#include "../so_long.h"
+#include "../libft/libft.h"
+#include "../libft/ft_printf/ft_printf.h"
+#include "../libft/get_next_line/get_next_line.h"

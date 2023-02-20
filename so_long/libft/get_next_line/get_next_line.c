@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:12:39 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/10 10:36:17 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:36:50 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_remove_line(char *stash)
 		free(stash);
 		return (0);
 	}
-	len = ft_strlen(stash);
+	len = ft_string_len(stash);
 	new_stash = malloc((len - i + 1) * sizeof(char));
 	if (!new_stash)
 		return (0);
@@ -78,7 +78,7 @@ char	*ft_read_line(int fd, char *stash)
 	if (!buf)
 		return (0);
 	bytes_read = 1;
-	while (bytes_read != 0 && !ft_strchr(stash, '\n'))
+	while (bytes_read != 0 && !ft_string_chr(stash, '\n'))
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -92,7 +92,7 @@ char	*ft_read_line(int fd, char *stash)
 			stash = malloc(sizeof(char) * 1);
 			stash[0] = '\0';
 		}
-		stash = ft_strjoin(stash, buf);
+		stash = ft_string_join(stash, buf);
 	}
 	free(buf);
 	return (stash);
@@ -112,20 +112,3 @@ char	*get_next_line(int fd)
 	stash = ft_remove_line(stash);
 	return (line);
 }
-
-/*
-int	main(void)
-{
-	int	abre;
-	int	n = 2;
-
-	abre = open("teste", O_RDONLY);
-	
-	while (n >= 0)
-	{
-		printf("%s", get_next_line(abre));
-		n--;
-	}
-	return (0);
-}
-*/
