@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 08:30:14 by maricard          #+#    #+#             */
-/*   Updated: 2022/11/30 12:58:09 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:46:58 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+
+//Map Struct
+typedef struct map_values{
+	int		lines;
+	int		columns;
+	char	**map_array;
+	int		collectibles;
+	int		exits;
+	int		players;
+}			t_map_values;
 
 //Function Prototypes
 int		ft_printf(const char *str, ...);

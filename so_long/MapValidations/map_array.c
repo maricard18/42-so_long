@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/20 13:51:53 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:53:46 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,13 @@ char	**map_array(int fd, int lines)
 int	map_array_validations(char *str)
 {
 	int		fd;
-	int		lines;
-	char	**map;
+	t_map_values	map_values;
 
 	fd = open(str, O_RDONLY);
-	lines = line_counter(fd);
+	map_values.lines = line_counter(fd);
 	close(fd);
 	fd = open(str, O_RDONLY);
-	map = map_array(fd, lines);
+	map_values.map_array = map_array(fd, lines);
 	while (*map)
 	{
 		printf("%s", *map);
