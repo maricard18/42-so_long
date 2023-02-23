@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/20 13:44:51 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/23 10:30:49 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	}
 	if (extension_validation(argv[1]) != 1)
 	{
-		ft_printf("Please verify that you have a .ber extension!");
+		ft_printf("Invalid .ber extension");
 		return (0);
 	}
 	else
