@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_array.c                                        :+:      :+:    :+:   */
+/*   map_values.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/22 11:53:46 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/01 14:06:26 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,41 @@ char	**map_array(int fd, int lines)
 	}
 }
 
-int	map_array_validations(char *str)
+int	characters(t_map *map)
+{
+	int		i;
+	int		a;
+
+	i = 0;
+	while (map->map_array[i])
+	{
+		a = 0;
+		while (map->map_array[i][a])
+		{
+			if (map->map_array[i][a] == 'C')
+				map->collectibles++;
+			if (map->map_array[i][a] == 'P')
+				map->players++;
+			if (map->map_array[i][a] == 'E')
+				map->exits++;
+			a++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	map_values(char *str, t_map *map)
 {
 	int		fd;
-	t_map_values	map_values;
 
 	fd = open(str, O_RDONLY);
-	map_values.lines = line_counter(fd);
+	map->lines = line_counter(fd);
 	close(fd);
 	fd = open(str, O_RDONLY);
-	map_values.map_array = map_array(fd, lines);
-	while (*map)
-	{
-		printf("%s", *map);
-		map++;
-	}
-	printf("\nJob Done!\n\n");
+	map->map_array = map_array(fd, map->lines);
+	map->columns = ft_strlen(map->map_array[0]);
 	close(fd);
+	characters(map);
 	return (0);
 }

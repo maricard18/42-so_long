@@ -6,7 +6,7 @@
 #    By: maricard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/02/20 14:04:09 by maricard         ###   ########.fr        #
+#    Updated: 2023/03/01 13:18:51 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,15 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 LIBFT = ./libft/libft.a
+NAME = so_long
 INCLUDES = includes
-SRC = ./MapValidations/extension_validation.c ./MapValidations/map_array.c \
+
+SRC = 	./src/MapValidations/extension.c \
+		./src/MapValidations/map_values.c \
+		./src/MapValidations/map_validations.c \
+		./src/Utils/utils.c	
 
 SRC-OBJ = $(SRC:.c=.o)
-
-NAME = so_long
 
 all: $(NAME)
 

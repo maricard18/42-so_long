@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extension_validation.c                             :+:      :+:    :+:   */
+/*   extension.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:35:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/20 13:51:42 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/01 13:17:36 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	dot_ber_validation(char *str, int i)
+int	ber_validation(char *str, int i)
 {
 	char	*ber_str;
 	char	*ber;
@@ -27,23 +27,24 @@ int	dot_ber_validation(char *str, int i)
 		return (0);
 }
 
-int	extension_validation(char *str)
+int	extension(char *str)
 {
 	int	i;
 	int	flag;
 
 	i = 0;
+	flag = ber_validation(str, i);
 	while (str)
 	{
 		if (str[i] == '.')
 		{
-			flag = dot_ber_validation(str, i);
 			if (flag == 1)
-				return (1);
-			else
 				return (0);
+			else
+				ft_error("Map extension is invalid!");
 		}
 		i++;
 	}
+	ft_error("Map extension not found");
 	return (0);
 }
