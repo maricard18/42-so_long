@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_values.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/01 14:06:26 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:15:42 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,13 @@ int	map_values(char *str, t_map *map)
 	int		fd;
 
 	fd = open(str, O_RDONLY);
+	if (fd < 0)
+		return (0);
 	map->lines = line_counter(fd);
 	close(fd);
 	fd = open(str, O_RDONLY);
+	if (fd < 0)
+		return (0);
 	map->map_array = map_array(fd, map->lines);
 	map->columns = ft_strlen(map->map_array[0]);
 	close(fd);

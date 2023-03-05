@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extension.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:35:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/01 13:17:36 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:15:42 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int	extension(char *str)
 	int	flag;
 
 	i = 0;
-	flag = ber_validation(str, i);
 	while (str)
 	{
 		if (str[i] == '.')
 		{
+			flag = ber_validation(str, i);
 			if (flag == 1)
 				return (0);
 			else

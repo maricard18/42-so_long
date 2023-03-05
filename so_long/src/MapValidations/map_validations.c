@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:27:27 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/01 14:02:21 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:15:42 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,22 @@ int	walls(t_map *map)
 	while (map->map_array[0])
 	{
 		if (map->map_array[0][map->a] != '1')
-			ft_error("Map walls are invalid");
+			ft_error("Map walls are invalid 1");
 		map->a++;
 	}
 	while (map->i < (map->lines - 1))
 	{
 		if (map->map_array[map->i][0] != '1')
-			ft_error("Map walls are invalid");
+			ft_error("Map walls are invalid 2");
 		if (map->map_array[map->i][map->columns - 1] != '1')
-			ft_error("Map walls are invalid");
+			ft_error("Map walls are invalid 3");
 		map->i++;
 	}
 	map->a = 0;
 	while (map->map_array[map->lines - 1][map->a])
 	{
 		if (map->map_array[map->lines - 1][map->a] != '1')
-			ft_error("Map walls are invalid");
+			ft_error("Map walls are invalid 4");
 		map->a++;
 	}
 	return (0);
