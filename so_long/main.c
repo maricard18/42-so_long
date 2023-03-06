@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/01 14:03:26 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/06 23:42:37 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int	main(int argc, char **argv)
 	}
 	extension(argv[1]);
 	map_validations(argv[1], &map);
+	ft_printf("OK!\n");
 }

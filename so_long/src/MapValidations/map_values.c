@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/05 19:15:42 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/06 23:24:44 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	**map_array(int fd, int lines)
 		temp = get_next_line(fd);
 		if (!temp)
 			return (map);
-		map[i] = temp;
+		map[i] = ft_strtrim(temp, "\n");
 		i++;
 	}
 }
