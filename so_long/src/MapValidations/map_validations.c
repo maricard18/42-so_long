@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:27:27 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/07 00:04:55 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/07 00:08:23 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	rectangle(t_map *map)
 		a = ft_strlen(map->map_array[i]);
 		if (a != len)
 			ft_error("Map lines don't have the same length.");
-		i++;/
+		i++;
 	}
 	if (map->lines == map->columns)
 		ft_error("Map need's to be a rectangle.");
@@ -61,10 +61,9 @@ int	walls(t_map *map)
 	{
 		if (map->map_array[map->i][0] != '1')
 			ft_error("Map walls are invalid 2.");
-		if (map/
-		\\\'';;;\ ->map_array[map->i][map->columns - 1] != '1')
+		if (map->map_array[map->i][map->columns - 1] != '1')
 			ft_error("Map walls are invalid 3.");
-		map->b i++;
+		map->i++;
 	}
 	map->a = 0;
 	while (map->map_array[map->lines - 1][map->a])
