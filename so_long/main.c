@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/06 23:42:37 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:53:52 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	main(int argc, char **argv)
 		ft_printf("Program needs <so_long> & <map.ber> to start!");
 		return (0);
 	}
-	extension(argv[1]);
+	extension_validation(argv[1]);
 	map_validations(argv[1], &map);
+//	start_game();
 	ft_printf("OK!\n");
 }

@@ -3,21 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maricard <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/03/01 13:18:51 by maricard         ###   ########.fr        #
+#    Updated: 2023/03/07 12:37:44 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
+MLX = -Imlx
 RM = rm -rf
 LIBFT = ./libft/libft.a
 NAME = so_long
 INCLUDES = includes
 
-SRC = 	./src/MapValidations/extension.c \
+SRC = 	./src/MapValidations/extension_validations.c \
 		./src/MapValidations/map_values.c \
 		./src/MapValidations/map_validations.c \
 		./src/Utils/utils.c	
@@ -33,7 +34,7 @@ $(NAME): $(SRC-OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) main.c $(SRC-OBJ) $(LIBFT) -o $(NAME) -I $(INCLUDES)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
+	$(CC) $(CFLAGS) $(MLX) -c $< -o $@ -I $(INCLUDES)
 
 clean:
 	$(MAKE) clean -C ./libft

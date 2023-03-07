@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extension.c                                        :+:      :+:    :+:   */
+/*   extension_validations.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:35:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/06 23:52:08 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:59:35 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ber_validation(char *str, int i)
 		return (0);
 }
 
-int	extension(char *str)
+int	extension_validation(char *str)
 {
 	int	i;
 	int	flag;

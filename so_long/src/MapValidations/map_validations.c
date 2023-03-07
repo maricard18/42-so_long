@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:27:27 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/07 00:08:23 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/07 09:43:53 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	check_characters(t_map *map)
 		map->a = 0;
 		while (map->map_array[map->i][map->a])
 		{
-			if (map->map_array[map->i][map->a] != '0' 
+			if (map->map_array[map->i][map->a] != '0'
 					&& map->map_array[map->i][map->a] != '1'
 						&& map->map_array[map->i][map->a] != 'P'
 							&& map->map_array[map->i][map->a] != 'C'

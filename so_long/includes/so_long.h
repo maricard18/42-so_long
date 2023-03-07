@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/01 14:01:32 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:52:33 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_map
 // Functions
 // MapValidations
 int		map_values(char *str, t_map *map);
-int		extension(char *str);
+int		extension_validation(char *str);
 int		map_validations(char *str, t_map *map);
 
 //Utils
