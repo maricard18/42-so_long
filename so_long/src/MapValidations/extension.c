@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:35:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/05 23:44:59 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/06 23:52:08 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ int	extension(char *str)
 		}
 		i++;
 	}
-	ft_error("Map extension not found");
+	ft_error("Map extension not found.");
 	return (0);
 }

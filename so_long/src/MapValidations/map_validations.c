@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:27:27 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/06 23:41:14 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/07 00:04:55 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,26 @@ int	rectangle(t_map *map)
 	{
 		a = ft_strlen(map->map_array[i]);
 		if (a != len)
-			ft_error("Map lines don't have the same length");
-		i++;
+			ft_error("Map lines don't have the same length.");
+		i++;/
 	}
 	if (map->lines == map->columns)
-		ft_error("Map need's to be a rectangle!");
+		ft_error("Map need's to be a rectangle.");
 	return (0);
 }
 
 int	values(t_map *map)
 {
 	if (map->collectibles == 0)
-		ft_error("No collectibles in this map");
+		ft_error("No collectibles in this map.");
 	if (map->exits > 1)
-		ft_error("There's more than 1 exit in this map");
+		ft_error("There's more than 1 exit in this map.");
 	if (map->exits < 1)
-		ft_error("The map doesn't have a exit");
+		ft_error("The map doesn't have a exit.");
 	if (map->players > 1)
-		ft_error("There's more than 1 player in this map");
+		ft_error("There's more than 1 player in this map.");
 	if (map->players < 1)
-		ft_error("The map doesn't have a player");
+		ft_error("The map doesn't have a player.");
 	return (0);
 }
 
@@ -54,22 +54,23 @@ int	walls(t_map *map)
 	while (map->map_array[0][map->a])
 	{
 		if (map->map_array[0][map->a] != '1')
-			ft_error("Map walls are invalid 1");
+			ft_error("Map walls are invalid 1.");
 		map->a++;
 	}
 	while (map->i < (map->lines - 1))
 	{
 		if (map->map_array[map->i][0] != '1')
-			ft_error("Map walls are invalid 2");
-		if (map->map_array[map->i][map->columns - 1] != '1')
-			ft_error("Map walls are invalid 3");
-		map->i++;
+			ft_error("Map walls are invalid 2.");
+		if (map/
+		\\\'';;;\ ->map_array[map->i][map->columns - 1] != '1')
+			ft_error("Map walls are invalid 3.");
+		map->b i++;
 	}
 	map->a = 0;
 	while (map->map_array[map->lines - 1][map->a])
 	{
 		if (map->map_array[map->lines - 1][map->a] != '1')
-			ft_error("Map walls are invalid 4");
+			ft_error("Map walls are invalid 4.");
 		map->a++;
 	}
 	return (0);
@@ -88,7 +89,7 @@ int	check_characters(t_map *map)
 						&& map->map_array[map->i][map->a] != 'P'
 							&& map->map_array[map->i][map->a] != 'C'
 								&& map->map_array[map->i][map->a] != 'E')
-				ft_error("Invalid character");
+				ft_error("Invalid character.");
 			map->a++;
 		}
 		map->i++;
