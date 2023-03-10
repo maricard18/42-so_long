@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/09 13:05:12 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/10 00:32:43 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <../mlx/mlx.h>
 
 // Libft library
 # include "libft.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
+
+//Extra
+# include <../mlx/mlx.h>
 
 //Structs
 typedef struct s_map
@@ -40,11 +42,21 @@ typedef struct s_map
 
 typedef struct s_game
 {
-	t_map	map;
-	void	*mlx;
-	void	*window;
-	void	*image;
+	t_map		map;
+//	t_sprite	sprite;
+	void		*mlx;
+	void		*window;
+	void		*image;
 }		t_game;
+
+typedef struct s_sprite
+{
+	char	*floor;
+	char	*wall;
+	char	*player;
+	char	*collectible;
+	char	*exit;
+}		t_sprite;
 
 // Functions
 // MapValidations
