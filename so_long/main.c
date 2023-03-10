@@ -6,41 +6,31 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/09 13:05:35 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:28:03 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	struct_map_init(t_map *map)
+void	struct_init(t_root *root)
 {
-	map->lines = 0;
-	map->columns = 0;
-	map->map_array = 0;
-	map->exits = 0;
-	map->collectibles = 0;
-	map->players = 0;
-}
-void	struct_game_init(t_game *game)
-{
-	game->mlx = 0;
-	game->window = 0;	
-	game->image = 0;
+	struct_map_init(root->map);
+	struct_mlx_init(root->mlx);
+	strcut_sprite_init(root->sprite);
 }
 
 int	main(int argc, char **argv)
 {
-	t_game	game;
-	t_map	map;
+	t_root	*root;
 
-	struct_map_init(&map);
-	struct_game_init(&game);
+	root = 0;
+	struct_init(root);
 	if (argc != 2)
 	{
 		ft_printf("Program needs <so_long> & <map.ber> to start!");
 		return (0);
 	}
 	extension_validation(argv[1]);
-	map_validations(argv[1], &map);
-	start_game(&game);
+	map_validations(argv[1], root->map);
+	start_game(root->mlx);
 }

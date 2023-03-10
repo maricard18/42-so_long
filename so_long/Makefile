@@ -6,7 +6,7 @@
 #    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/03/09 12:30:38 by maricard         ###   ########.fr        #
+#    Updated: 2023/03/10 12:30:36 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC = 	./src/MapValidations/extension_validations.c \
 		./src/MapValidations/map_values.c \
 		./src/MapValidations/map_validations.c \
 		./src/Utils/utils.c \
-		./src/Game/window.c
+		./src/Utils/struct_init.c \
+		./src/Game/window.c 
 
 SRC-OBJ = $(SRC:.c=.o)
 
@@ -35,7 +36,7 @@ $(LIBFT):
 $(NAME): $(SRC-OBJ) $(LIBFT)
 	$(MAKE) -C ./mlx
 	$(CC) $(CFLAGS) main.c $(SRC-OBJ) $(LIBFT) $(MLX) -o $(NAME) -I $(INCLUDES)
-	./so_long maps/Valid1.ber
+#	./so_long maps/Valid1.ber
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)

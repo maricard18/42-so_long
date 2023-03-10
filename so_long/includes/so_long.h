@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/10 00:32:43 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:15:16 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <../mlx/mlx.h>
 
 // Libft library
 # include "libft.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
-
-//Extra
-# include <../mlx/mlx.h>
 
 //Structs
 typedef struct s_map
@@ -40,15 +38,6 @@ typedef struct s_map
 	int		a;
 }		t_map;
 
-typedef struct s_game
-{
-	t_map		map;
-//	t_sprite	sprite;
-	void		*mlx;
-	void		*window;
-	void		*image;
-}		t_game;
-
 typedef struct s_sprite
 {
 	char	*floor;
@@ -56,18 +45,43 @@ typedef struct s_sprite
 	char	*player;
 	char	*collectible;
 	char	*exit;
+	int		x;
+	int		y;
 }		t_sprite;
 
+typedef struct s_mlx
+{
+	t_map		map;
+	t_sprite	sprite;
+	void		*ptr;
+	void		*window;
+	void		*image;
+}		t_mlx;
+
+typedef struct s_root
+{
+	t_map		*map;
+	t_mlx		*mlx;
+	t_sprite	*sprite;
+}		t_root;
+
+
 // Functions
+//Main
+void	strcut_init(t_root *root);
+
 // MapValidations
 int		map_values(char *str, t_map *map);
 int		extension_validation(char *str);
 int		map_validations(char *str, t_map *map);
 
 //Utils
-int	ft_error(char *str);
+int		ft_error(char *str);
+void	struct_map_init(t_map *map);
+void	struct_mlx_init(t_mlx *mlx);
+void	strcut_sprite_init(t_sprite *sprite);
 
 //Game
-int	start_game(t_game *game);
+int	start_game(t_mlx *mlx);
 
 #endif

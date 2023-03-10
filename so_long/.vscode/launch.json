@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/mariohenriques/Desktop/42/42-Common-Core/42-so_long/so_long",
+      "program": "/Users/mariohenriques/Desktop/42/42-Common-Core/42-so_long/so_long/build/Debug/outDebug"
+    }
+  ]
+}
