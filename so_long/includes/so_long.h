@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/10 11:15:16 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/11 10:50:16 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ typedef struct s_root
 }		t_root;
 
 
-// Functions
+//Functions
 //Main
-void	strcut_init(t_root *root);
+void	struct_init(t_root *root);
 
 // MapValidations
 int		map_values(char *str, t_map *map);

@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/10 12:28:03 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/11 12:39:16 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void	struct_init(t_root *root)
 
 int	main(int argc, char **argv)
 {
-	t_root	*root;
-
-	root = 0;
-	struct_init(root);
+	t_root		root;
+	
+	ft_bzero(&root, 0);
+	struct_init(&root);
 	if (argc != 2)
 	{
 		ft_printf("Program needs <so_long> & <map.ber> to start!");
 		return (0);
 	}
 	extension_validation(argv[1]);
-	map_validations(argv[1], root->map);
-	start_game(root->mlx);
+	map_validations(argv[1], root.map);
+	start_game(root.mlx);
 }
