@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:27:27 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/07 09:43:53 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/13 11:49:43 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,49 +49,49 @@ int	values(t_map *map)
 
 int	walls(t_map *map)
 {
-	map->i = 1;
-	map->a = 0;
-	while (map->map_array[0][map->a])
+	map->y = 1;
+	map->x = 0;
+	while (map->map_array[0][map->x])
 	{
-		if (map->map_array[0][map->a] != '1')
+		if (map->map_array[0][map->x] != '1')
 			ft_error("Map walls are invalid 1.");
-		map->a++;
+		map->x++;
 	}
-	while (map->i < (map->lines - 1))
+	while (map->y < (map->lines - 1))
 	{
-		if (map->map_array[map->i][0] != '1')
+		if (map->map_array[map->y][0] != '1')
 			ft_error("Map walls are invalid 2.");
-		if (map->map_array[map->i][map->columns - 1] != '1')
+		if (map->map_array[map->y][map->columns - 1] != '1')
 			ft_error("Map walls are invalid 3.");
-		map->i++;
+		map->y++;
 	}
-	map->a = 0;
-	while (map->map_array[map->lines - 1][map->a])
+	map->x = 0;
+	while (map->map_array[map->lines - 1][map->x])
 	{
-		if (map->map_array[map->lines - 1][map->a] != '1')
+		if (map->map_array[map->lines - 1][map->x] != '1')
 			ft_error("Map walls are invalid 4.");
-		map->a++;
+		map->x++;
 	}
 	return (0);
 }
 
 int	check_characters(t_map *map)
 {
-	map->i = 0;
-	while (map->map_array[map->i])
+	map->y = 0;
+	while (map->map_array[map->y])
 	{
-		map->a = 0;
-		while (map->map_array[map->i][map->a])
+		map->x = 0;
+		while (map->map_array[map->y][map->x])
 		{
-			if (map->map_array[map->i][map->a] != '0'
-					&& map->map_array[map->i][map->a] != '1'
-						&& map->map_array[map->i][map->a] != 'P'
-							&& map->map_array[map->i][map->a] != 'C'
-								&& map->map_array[map->i][map->a] != 'E')
-				ft_error("Invalid character.");
-			map->a++;
+			if (map->map_array[map->y][map->x] != '0'
+					&& map->map_array[map->y][map->x] != '1'
+						&& map->map_array[map->y][map->x] != 'P'
+							&& map->map_array[map->y][map->x] != 'C'
+								&& map->map_array[map->y][map->x] != 'E')
+				ft_error("invalid character.");
+			map->x++;
 		}
-		map->i++;
+		map->y++;
 	}
 	return (0);
 }

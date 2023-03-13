@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   path_validation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/13 12:08:32 by maricard         ###   ########.fr       */
+/*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
+/*   Updated: 2023/03/13 13:29:18 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	struct_init(t_root *root)
+int flood(t_map *map)
 {
-	struct_map_init(&(root->map));
-	struct_mlx_init(&(root->mlx));
-	strcut_sprite_init(&(root->sprite));
+    char    **pl;
+
+    map->y = map->y2;
+    map->x = map->x2;
+    if (map->x < 0 || map->x >= map->columns
+            || map->y < 0 || map->y >= map->lines
+                || pl[map->y][map->x] != '0')
+        break ;
+    else
+    {
+        pl[map->y][map->x] = 
+    }
 }
 
-int	main(int argc, char **argv)
+int flood_fill(t_map *map)
 {
-	t_root		root;
-	
-	ft_bzero(&root, 0);
-	struct_init(&root);
-	if (argc != 2)
-	{
-		ft_printf("Program needs <so_long> & <map.ber> to start!");
-		return (0);
-	}
-	extension_validation(argv[1]);
-	map_validations(argv[1], &(root.map));
-	start_game(&root);
+    
 }

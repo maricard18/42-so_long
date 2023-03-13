@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/06 23:24:44 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/13 11:49:35 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,11 @@ int	characters(t_map *map)
 			if (map->map_array[i][a] == 'C')
 				map->collectibles++;
 			if (map->map_array[i][a] == 'P')
+			{
 				map->players++;
+				map->x2 = a;
+				map->y2 = i;
+			}
 			if (map->map_array[i][a] == 'E')
 				map->exits++;
 			a++;

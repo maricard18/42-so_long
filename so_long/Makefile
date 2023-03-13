@@ -6,7 +6,7 @@
 #    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/03/11 12:39:30 by maricard         ###   ########.fr        #
+#    Updated: 2023/03/13 10:13:02 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 
-MLX = -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLX_MACOS = -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLX_LINUX = -L ./mlx -lmlx -Ilmlx -lXext -lX11 -lm
 LIBFT = ./libft/libft.a
 NAME = so_long
 INCLUDES = includes
@@ -35,7 +36,7 @@ $(LIBFT):
 
 $(NAME): $(SRC-OBJ) $(LIBFT)
 	$(MAKE) -C ./mlx
-	$(CC) $(CFLAGS) main.c $(SRC-OBJ) $(LIBFT) $(MLX) -o $(NAME) -I $(INCLUDES)
+	$(CC) $(CFLAGS) main.c $(SRC-OBJ) $(LIBFT) $(MLX_LINUX) -o $(NAME) -I $(INCLUDES)
 	./so_long maps/Valid1.ber
 
 %.o: %.c

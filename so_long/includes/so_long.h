@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/11 10:50:16 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/13 12:09:43 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ typedef struct s_map
 	int		exits;
 	int		collectibles;
 	int		players;
-	int		i;
-	int		a;
+	int		x;
+	int		y;
+	int		x2;
+	int		y2;
 }		t_map;
 
 typedef struct s_sprite
@@ -51,8 +53,6 @@ typedef struct s_sprite
 
 typedef struct s_mlx
 {
-	t_map		map;
-	t_sprite	sprite;
 	void		*ptr;
 	void		*window;
 	void		*image;
@@ -60,9 +60,9 @@ typedef struct s_mlx
 
 typedef struct s_root
 {
-	t_map		*map;
-	t_mlx		*mlx;
-	t_sprite	*sprite;
+	t_map		map;
+	t_mlx		mlx;
+	t_sprite	sprite;
 }		t_root;
 
 
@@ -82,6 +82,6 @@ void	struct_mlx_init(t_mlx *mlx);
 void	strcut_sprite_init(t_sprite *sprite);
 
 //Game
-int	start_game(t_mlx *mlx);
+int	start_game(t_root *root);
 
 #endif
