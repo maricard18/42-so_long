@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:27:27 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/13 11:49:43 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:18:06 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ int	map_validations(char *str, t_map *map)
 	values(map);
 	walls(map);
 	check_characters(map);
+	path_validation(map);
 	return (0);
 }

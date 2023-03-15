@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 10:25:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/15 11:22:53 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:56:52 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	map_init(t_map *map)
 	map->exits = 0;
 	map->collectibles = 0;
 	map->players = 0;
+	map->c = 0;
+	map->e = 0;
 }
 void	init_window(t_root *root)
 {

@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/15 11:23:49 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:19:26 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ typedef struct s_map
 	int		players;
 	int		x;
 	int		y;
-	int		x2;
-	int		y2;
+	int		c;
+	int		e;
+	int		player_x_position;
+	int		player_y_position;
 }		t_map;
 
 typedef struct s_sprites
@@ -80,6 +82,8 @@ void	init_context(t_root *root);
 int		map_values(char *str, t_map *map);
 int		extension_validation(char *str);
 int		map_validations(char *str, t_map *map);
+int		path_validation(t_map *map);
+void 	flood_fill(int x, int y, t_map *map);
 
 // Utils
 int		ft_error(char *str);
