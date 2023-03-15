@@ -6,12 +6,12 @@
 #    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/03/14 10:46:54 by maricard         ###   ########.fr        #
+#    Updated: 2023/03/15 10:54:20 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -O0 -Wall -Werror -Wextra
 RM = rm -rf
 
 MLX_MACOS = -Lmlx -lmlx -framework OpenGL -framework AppKit
@@ -37,7 +37,7 @@ $(LIBFT):
 $(NAME): $(SRC-OBJ) $(LIBFT)
 	$(MAKE) -C ./mlx
 	$(CC) $(CFLAGS) main.c $(SRC-OBJ) $(LIBFT) $(MLX_LINUX) -o $(NAME) -I $(INCLUDES)
-	./so_long maps/Valid1.ber
+#	./so_long maps/Valid1.ber
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)

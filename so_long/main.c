@@ -6,25 +6,24 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/14 12:17:48 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:24:25 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	struct_init(t_root *root)
+void	init_context(t_root *root)
 {
-	struct_map_init(&(root->map));
-	struct_mlx_init(&(root->mlx));
-	strcut_sprite_init(&(root->sprite), root);
+	map_init(&(root->map));
+	init_window(root);
+	load_sprites(root);
 }
 
 int	main(int argc, char **argv)
 {
 	t_root		root;
 	
-	ft_bzero(&root, 0);
-	struct_init(&root);
+	init_context(&root);
 	if (argc != 2)
 	{
 		ft_printf("Program needs <so_long> & <map.ber> to start!");

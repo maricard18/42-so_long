@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/14 11:20:20 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:23:49 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include "get_next_line.h"
 
 // Image Macros
-# define SIZE 64
+# define SIZE 32
 # define WALL '1'
 # define FLOOR '0'
 # define PLAYER 'P'
@@ -48,14 +48,14 @@ typedef struct s_map
 	int		y2;
 }		t_map;
 
-typedef struct s_sprite
+typedef struct s_sprites
 {
 	void	*floor;
 	void	*wall;
 	void	*player;
 	void	*collectible;
 	void	*exit;
-}		t_sprite;
+}		t_sprites;
 
 typedef struct s_mlx
 {
@@ -68,13 +68,13 @@ typedef struct s_root
 {
 	t_map		map;
 	t_mlx		mlx;
-	t_sprite	sprite;
+	t_sprites	sprites;
 }		t_root;
 
 
 // Functions
 // Main
-void	struct_init(t_root *root);
+void	init_context(t_root *root);
 
 // MapValidations
 int		map_values(char *str, t_map *map);
@@ -83,9 +83,9 @@ int		map_validations(char *str, t_map *map);
 
 // Utils
 int		ft_error(char *str);
-void	struct_map_init(t_map *map);
-void	struct_mlx_init(t_mlx *mlx);
-void	strcut_sprite_init(t_sprite *sprite, t_root *root);
+void	map_init(t_map *map);
+void	init_window(t_root *root);
+void	load_sprites(t_root *root);
 
 // Game
 int	start_game(t_root *root);
