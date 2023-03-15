@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 10:25:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/13 12:09:10 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:23:03 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,19 @@ void	struct_mlx_init(t_mlx *mlx)
 	mlx->image = 0;
 }
 
-void	strcut_sprite_init(t_sprite *sprite)
+void	strcut_sprite_init(t_sprite *sprite, t_root *root)
 {
-	sprite->floor = "./images/floor.xpm";
-	sprite->wall = "./images/wall.xpm";
-	sprite->player = "./images/player.xpm";
-	sprite->collectible = "./images/collectible.xpm";
-	sprite->exit = "./images/exit.xpm";
-	sprite->x = 32;
-	sprite->y = 32;
+	int	x;
+	int	y;
+	
+	sprite->floor = mlx_xpm_file_to_image(root->mlx.ptr, \
+											"./images/floor.xpm", &x, &y);
+	sprite->wall = mlx_xpm_file_to_image(root->mlx.ptr, \
+											"./images/wall.xpm", &x, &y);
+	sprite->player = mlx_xpm_file_to_image(root->mlx.ptr, \
+											"./images/player.xpm", &x, &y);
+	sprite->collectible = mlx_xpm_file_to_image(root->mlx.ptr, \
+											"./images/collectible.xpm", &x, &y);
+	sprite->exit = mlx_xpm_file_to_image(root->mlx.ptr, \
+											"./images/exit.xpm", &x, &y);
 }

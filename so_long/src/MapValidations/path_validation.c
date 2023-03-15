@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/13 13:29:18 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:24:23 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int flood(t_map *map)
     if (map->x < 0 || map->x >= map->columns
             || map->y < 0 || map->y >= map->lines
                 || pl[map->y][map->x] != '0')
-        break ;
+        break;
     else
     {
         pl[map->y][map->x] = 
