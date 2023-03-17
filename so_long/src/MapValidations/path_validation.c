@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_validation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/15 13:20:11 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:51:36 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int path_validation(t_map *map)
     int x;
     int y;
 
-    x = map->player_y_position;
-    y = map->player_x_position;
+    x = map->player_x_position;
+    y = map->player_y_position;
     flood_fill(x, y, map);
     if (map->c == map->collectibles && map->e == map->exits)
         return (0);
