@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 10:25:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/15 12:56:52 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:19:58 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	init_window(t_root *root)
 {
 	root->mlx.ptr = mlx_init();
     root->mlx.window = mlx_new_window(root->mlx.ptr, \
-        32*root->map.columns, 32*root->map.lines, "so long");
+        600, 400, "so long");
 }
 
 void	load_sprites(t_root *root)
