@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/15 13:19:26 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/23 13:16:01 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		map_values(char *str, t_map *map);
 int		extension_validation(char *str);
 int		map_validations(char *str, t_map *map);
 int		path_validation(t_map *map);
-void 	flood_fill(int x, int y, t_map *map);
+void 	flood_fill(int x, int y, t_map *map, char **map_array2);
 
 // Utils
 int		ft_error(char *str);

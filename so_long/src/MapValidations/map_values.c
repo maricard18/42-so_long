@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_values.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/15 12:47:55 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/24 11:23:55 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	**map_array(int fd, int lines)
 	int		i;
 
 	i = 0;
-	map = ft_calloc(sizeof(char *), lines + 1);
+	map = ft_calloc(lines + 1, sizeof(char *));
 	if (!map)
 		return (0);
 	while (1)
