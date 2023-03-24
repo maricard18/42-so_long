@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/24 11:19:18 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/24 12:41:58 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,25 @@ char    **map_duplicate(t_map *map, char **map_array2)
     int y;
 
     y = 0;
-    while (map_array2[y])
+    while (y < map->lines)
     {
         map_array2[y] = malloc(sizeof(char) * (map->columns + 1));
         if (!map_array2[y])
             return (0);
         y++;
     }
+    map_array2[y] = NULL;
     y = 0;
     while (map_array2[y])
     {
         x = 0;
-        while (map_array2[y][x])
+        while (x < map->columns)
         {
             map_array2[y][x] = map->map_array[y][x];
             x++;
         }
         y++;
     }
-    printf("%s\n", map_array2[0]);
     return (map_array2);
 }
 
