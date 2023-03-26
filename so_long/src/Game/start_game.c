@@ -1,68 +1,66 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   start_game.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 11:55:23 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/15 11:22:18 by maricard         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #include "so_long.h"
 
-int put_image_to_window(t_root *root, int column, int line)
+void    move_player(t_root *root, int x, int y)
 {
-    if (root->map.map_array[root->map.y][root->map.x] == WALL)
-        mlx_put_image_to_window(root->mlx.ptr, \
-            root->mlx.window, root->sprites.wall, column, line);
-    else if (root->map.map_array[root->map.y][root->map.x] == FLOOR)
-        mlx_put_image_to_window(root->mlx.ptr, \
-            root->mlx.window, root->sprites.floor, column, line);
-    else if (root->map.map_array[root->map.y][root->map.x] == PLAYER)
-        mlx_put_image_to_window(root->mlx.ptr, \
-            root->mlx.window, root->sprites.player, column, line);
-    else if (root->map.map_array[root->map.y][root->map.x] == COLLECTIBLE)
-        mlx_put_image_to_window(root->mlx.ptr, \
-            root->mlx.window, root->sprites.collectible, column, line);
-    else if (root->map.map_array[root->map.y][root->map.x] == EXIT)
-        mlx_put_image_to_window(root->mlx.ptr, \
-            root->mlx.window, root->sprites.exit, column, line);
-    return (0);
-}
-
-int draw_map(t_root *root)
-{
-    int column;
-    int line;
-
-    line = 0;
-    root->map.y = 0;
-    while (root->map.map_array[root->map.y])
+    if (root->map.map_array[y][x] == COLLECTIBLE)
     {
-        column = 0;
-        root->map.x = 0;
-        while (root->map.map_array[root->map.y][root->map.x])
-        {
-            put_image_to_window(root, column, line);
-            root->map.x++;
-            column += SIZE;
-        }
-        root->map.y++;
-        line += SIZE;
+        root->map.c++;
     }
+    mlx_put_image_to_window(root->mlx.ptr, \
+        root->mlx.window, root->sprites.player, x, y);
+    mlx_put_image_to_window(root->mlx.ptr, \
+        root->mlx.window, root->sprites.floor, root->map.x, root->map.y);
+}
+
+int check_next_tile(t_root *root, int x, int y)
+{
+    if (root->map.map_array[y][x] == WALL)
+        return (0);
+    else if (root->map.map_array[y][x] == EXIT 
+                && root->map.c == root->map.collectibles)
+    {
+        move_player(root, x, y);
+        ft_printf("!CONGRATS!\n\nYOU WON\n");
+        exit(0);
+    }
+    move_player(root, x, y);
     return (0);
 }
 
-int start_game(t_root *root)
+
+void    key_pressed(t_root *root, int key)
 {
-    int x = 0;
-    int y = 0;
-    
-    mlx_put_image_to_window(root->mlx.ptr, \
-        root->mlx.window, root->sprites.floor, x, y);
-    draw_map(root);
-    mlx_loop(root->mlx.ptr);
-    return (0);
+    int flag;
+
+    flag = 0;
+//  mlx_hook
+    if (key == W)
+    {
+        flag = check_next_tile(root, root->map.x, root->map.y + 1);
+        root->map.y++;
+    }
+    else if (key == S)
+    {
+        flag = check_next_tile(root, root->map.x, root->map.y - 1);
+        root->map.y--;
+    }
+    else if (key == A)
+    {
+        flag = check_next_tile(root, root->map.x - 1, root->map.y);
+        root->map.x--;
+    }
+    else if (key == D)
+    {
+        flag = check_next_tile(root, root->map.x + 1, root->map.y);
+        root->map.x++;
+    }
 }
+
+/*
+Check the flag
+verify if the next moove is valid
+if it is -> root->map.y ++;
+if not -> wait for next move
+*/

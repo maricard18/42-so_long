@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 10:25:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/23 09:50:28 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/25 11:22:58 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ void	map_init(t_map *map)
 	map->c = 0;
 	map->e = 0;
 }
+
 void	init_window(t_root *root)
 {
 	root->mlx.ptr = mlx_init();
     root->mlx.window = mlx_new_window(root->mlx.ptr, \
-        600, 400, "so long");
+        1100, 200, "so long");
 }
 
 void	load_sprites(t_root *root)

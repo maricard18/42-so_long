@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/24 12:41:58 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/26 10:48:40 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ int     path_validation(t_map *map)
         return (0);
     else
         ft_error("There isn't a way out of this map!");
+    map->c = 0;
+    map->x = map->player_x_position;
+    map->y = map->player_y_position;
     return (0);
 }
 

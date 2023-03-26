@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/24 11:23:55 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/26 10:22:39 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	**map_array(int fd, int lines)
 	}
 }
 
-int	characters(t_map *map)
+void	characters(t_map *map)
 {
 	int		i;
 	int		a;
@@ -73,7 +73,6 @@ int	characters(t_map *map)
 		}
 		i++;
 	}
-	return (0);
 }
 
 int	map_values(char *str, t_map *map)
