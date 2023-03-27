@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mario <mario@student.42.fr>                +#+  +:+       +#+         #
+#    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/03/27 08:11:45 by mario            ###   ########.fr        #
+#    Updated: 2023/03/27 10:31:06 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = 	./src/MapValidations/extension_validations.c \
 		./src/MapValidations/map_values.c \
 		./src/MapValidations/map_validations.c \
 		./src/MapValidations/path_validation.c \
-		./src/Utils/utils.c \
+		./src/Utils/error.c \
 		./src/Utils/struct_init.c \
 		./src/Game/load_game.c \
 		./src/Game/start_game.c

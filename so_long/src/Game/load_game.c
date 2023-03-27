@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:55:23 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/27 08:11:18 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/27 11:25:53 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,14 @@ void draw_map(t_root *root)
         root->map.y++;
         line += SIZE;
     }
+    root->map.x = root->map.player_x_position;
+    root->map.y = root->map.player_y_position;
 }
 
 int game(t_root *root)
 {
     draw_map(root);
-    key_pressed(root, key);
+    mlx_hook(root->mlx.window, 2, (1L<<0), key_pressed, root);
     mlx_loop(root->mlx.ptr);
     return (0);
 }

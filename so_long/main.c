@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/15 11:24:25 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/27 11:44:37 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	init_context(t_root *root)
 int	main(int argc, char **argv)
 {
 	t_root		root;
-	
+
 	init_context(&root);
 	if (argc != 2)
 	{
@@ -31,5 +31,5 @@ int	main(int argc, char **argv)
 	}
 	extension_validation(argv[1]);
 	map_validations(argv[1], &(root.map));
-	start_game(&root);
+	game(&root);
 }

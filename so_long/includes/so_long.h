@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/27 08:12:41 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/27 11:25:20 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@
 # define COLLECTIBLE 'C'
 # define EXIT 'E'
 
-# define ESC 27
-# define UP 87
-# define DOWN 83
-# define LEFT 65
-# define RIGHT 68
+# define ESC 65307
+# define UP 119
+# define DOWN 115
+# define LEFT 97
+# define RIGHT 100
 
 // Structs
 typedef struct s_map
@@ -55,6 +55,7 @@ typedef struct s_map
 	int		e;
 	int		player_x_position;
 	int		player_y_position;
+	int		moves;
 }		t_map;
 
 typedef struct s_sprites
@@ -99,5 +100,7 @@ void	init_window(t_root *root);
 void	load_sprites(t_root *root);
 
 // Game
-int	game(t_root *root);
+int		game(t_root *root);
+int		key_pressed(int key, t_root *root);
+
 #endif

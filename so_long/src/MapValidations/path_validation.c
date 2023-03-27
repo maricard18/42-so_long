@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_validation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/26 10:48:40 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/27 10:42:28 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ int     path_validation(t_map *map)
     map_duplicate(map, map_array2);
     flood_fill(x, y, map, map_array2);
     if (map->c == map->collectibles && map->e == map->exits)
+    {
+        map->c = 0;
         return (0);
+    }
     else
         ft_error("There isn't a way out of this map!");
-    map->c = 0;
-    map->x = map->player_x_position;
-    map->y = map->player_y_position;
     return (0);
 }
 
