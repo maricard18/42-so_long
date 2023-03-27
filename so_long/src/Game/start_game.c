@@ -14,7 +14,7 @@ void    move_player(t_root *root, int x, int y)
         root->mlx.window, root->sprites.floor, root->map.x, root->map.y);
 }
 
-int check_next_tile(t_root *root, int x, int y)
+int     check_next_tile(t_root *root, int x, int y)
 {
     if (root->map.map_array[y][x] == WALL)
         return (0);
@@ -30,7 +30,6 @@ int check_next_tile(t_root *root, int x, int y)
     move_player(root, x, y);
     return (0);
 }
-
 
 void    key_pressed(t_root *root, int key)
 {
@@ -55,12 +54,5 @@ void    key_pressed(t_root *root, int key)
         root->map.x++;
     }
     else if (key == ESC)
-        ...
+        ft_printf("GAME OVER\n");
 }
-
-/*
-Check the flag
-verify if the next moove is valid
-if it is -> root->map.y ++;
-if not -> wait for next move
-*/

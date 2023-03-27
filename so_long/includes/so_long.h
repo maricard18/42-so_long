@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/26 20:40:51 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/27 08:12:41 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@
 # define COLLECTIBLE 'C'
 # define EXIT 'E'
 
-# define ESC
-# define UP
-# define DOWN
-# define LEFT
-# define RIGHT
+# define ESC 27
+# define UP 87
+# define DOWN 83
+# define LEFT 65
+# define RIGHT 68
+
 // Structs
 typedef struct s_map
 {
@@ -98,6 +99,5 @@ void	init_window(t_root *root);
 void	load_sprites(t_root *root);
 
 // Game
-int	start_game(t_root *root);
-
+int	game(t_root *root);
 #endif
