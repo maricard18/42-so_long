@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:48:59 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/27 11:50:55 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/27 12:01:48 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void    move_player(t_root *root, int x, int y)
 {
-	printf("%d\n", root->map.c);
 	if (root->map.map_array[y][x] == COLLECTIBLE)
 	{
 		root->map.map_array[y][x] = '0';
@@ -38,7 +37,13 @@ int     check_next_tile(t_root *root, int x, int y)
 		{
 			move_player(root, x, y);
 			ft_printf("Moves: %d\n", root->map.moves);
-			ft_printf("--------->t->map.moves);
+			ft_printf("--------\n YOU WON\n");
+			exit(0);
+		}
+		return (0);
+	}
+	move_player(root, x, y);
+	ft_printf("Moves: %d\n", root->map.moves);
 	root->map.x = x;
 	root->map.y = y;
 	return (0);
