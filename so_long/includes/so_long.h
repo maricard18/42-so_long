@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/25 19:16:59 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/26 20:40:51 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@
 # define COLLECTIBLE 'C'
 # define EXIT 'E'
 
+# define ESC
+# define UP
+# define DOWN
+# define LEFT
+# define RIGHT
 // Structs
 typedef struct s_map
 {

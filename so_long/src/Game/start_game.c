@@ -22,9 +22,11 @@ int check_next_tile(t_root *root, int x, int y)
                 && root->map.c == root->map.collectibles)
     {
         move_player(root, x, y);
-        ft_printf("!CONGRATS!\n\nYOU WON\n");
+        ft_printf("YOU WON\n");
         exit(0);
     }
+    root->map.x = x;
+    root->map.y = y;
     move_player(root, x, y);
     return (0);
 }
@@ -32,30 +34,28 @@ int check_next_tile(t_root *root, int x, int y)
 
 void    key_pressed(t_root *root, int key)
 {
-    int flag;
-
-    flag = 0;
-//  mlx_hook
-    if (key == W)
+    if (key == UP)
     {
-        flag = check_next_tile(root, root->map.x, root->map.y + 1);
+        check_next_tile(root, root->map.x, root->map.y + 1);
         root->map.y++;
     }
-    else if (key == S)
+    else if (key == DOWN)
     {
-        flag = check_next_tile(root, root->map.x, root->map.y - 1);
+        check_next_tile(root, root->map.x, root->map.y - 1);
         root->map.y--;
     }
-    else if (key == A)
+    else if (key == LEFT)
     {
-        flag = check_next_tile(root, root->map.x - 1, root->map.y);
+        check_next_tile(root, root->map.x - 1, root->map.y);
         root->map.x--;
     }
-    else if (key == D)
+    else if (key == RIGHT)
     {
-        flag = check_next_tile(root, root->map.x + 1, root->map.y);
+        check_next_tile(root, root->map.x + 1, root->map.y);
         root->map.x++;
     }
+    else if (key == ESC)
+        ...
 }
 
 /*
