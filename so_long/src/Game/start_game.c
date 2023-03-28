@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:48:59 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/28 09:59:14 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/28 22:43:39 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int     check_next_tile(t_root *root, int x, int y)
 			move_player(root, x, y);
 			ft_printf("Moves: %d\n", root->map.moves);
 			ft_printf("---------\n YOU WON\n");
+			destroy(root);
 			exit(0);
 		}
 		return (0);
@@ -51,15 +52,19 @@ int     check_next_tile(t_root *root, int x, int y)
 
 int    key_pressed(int key, t_root *root)
 {
-	if (key == UP)
+	if (key == UP || key == W)
 		check_next_tile(root, root->map.x, root->map.y - 1);
-	else if (key == DOWN)
+	else if (key == DOWN || key == S)
 		check_next_tile(root, root->map.x, root->map.y + 1);
-	else if (key == LEFT)
+	else if (key == LEFT || key == A)
 		check_next_tile(root, root->map.x - 1, root->map.y);
-	else if (key == RIGHT)
+	else if (key == RIGHT || key == D)
 		check_next_tile(root, root->map.x + 1, root->map.y);
 	else if (key == ESC)
-		ft_printf("GAME OVER\n");
+	{
+		ft_printf("---------\nGAME OVER\n");
+		destroy(root);
+		exit(1);
+	}	
 	return (0);
 }

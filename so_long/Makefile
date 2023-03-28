@@ -6,7 +6,7 @@
 #    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/03/28 09:55:33 by maricard         ###   ########.fr        #
+#    Updated: 2023/03/28 22:13:40 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,11 @@ SRC = 	./src/MapValidations/extension_validations.c \
 		./src/MapValidations/map_values.c \
 		./src/MapValidations/map_validations.c \
 		./src/MapValidations/path_validation.c \
+		./src/Game/load_game.c \
+		./src/Game/start_game.c \
 		./src/Utils/error.c \
 		./src/Utils/struct_init.c \
-		./src/Game/load_game.c \
-		./src/Game/start_game.c
+		./src/Utils/destroy.c
 
 SRC-OBJ = $(SRC:.c=.o)
 
@@ -39,7 +40,6 @@ $(LIBFT):
 $(NAME): $(SRC-OBJ) $(LIBFT)
 	$(MAKE) -C ./mlx
 	$(CC) $(CFLAGS) main.c $(SRC-OBJ) $(LIBFT) $(MLX_LINUX) -o $(NAME) -I $(INCLUDES)
-	./so_long maps/Valid1.ber
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
