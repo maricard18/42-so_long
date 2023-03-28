@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:48:59 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/27 12:01:48 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/28 09:59:14 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int     check_next_tile(t_root *root, int x, int y)
 		{
 			move_player(root, x, y);
 			ft_printf("Moves: %d\n", root->map.moves);
-			ft_printf("--------\n YOU WON\n");
+			ft_printf("---------\n YOU WON\n");
 			exit(0);
 		}
 		return (0);

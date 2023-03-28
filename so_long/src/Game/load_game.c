@@ -6,13 +6,13 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:55:23 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/27 11:25:53 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/28 09:59:59 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void put_image_to_window(t_root *root, int column, int line)
+void    put_image_to_window(t_root *root, int column, int line)
 {
     if (root->map.map_array[root->map.y][root->map.x] == WALL)
         mlx_put_image_to_window(root->mlx.ptr, \
@@ -24,8 +24,12 @@ void put_image_to_window(t_root *root, int column, int line)
         mlx_put_image_to_window(root->mlx.ptr, \
             root->mlx.window, root->sprites.player, column, line);
     else if (root->map.map_array[root->map.y][root->map.x] == COLLECTIBLE)
+    {
+        mlx_put_image_to_window(root->mlx.ptr, \
+            root->mlx.window, root->sprites.floor, column, line);
         mlx_put_image_to_window(root->mlx.ptr, \
             root->mlx.window, root->sprites.collectible, column, line);
+    }
     else if (root->map.map_array[root->map.y][root->map.x] == EXIT)
         mlx_put_image_to_window(root->mlx.ptr, \
             root->mlx.window, root->sprites.exit, column, line);
