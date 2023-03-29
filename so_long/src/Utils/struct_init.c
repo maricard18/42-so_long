@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 10:25:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/28 21:32:01 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 10:55:09 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void	map_init(t_map *map)
 void	init_window(t_root *root)
 {
 	root->mlx.ptr = mlx_init();
-    root->mlx.window = mlx_new_window(root->mlx.ptr, \
-        root->map.columns * SIZE, root->map.lines * SIZE, "so long");
+	root->mlx.window = mlx_new_window(root->mlx.ptr, \
+		root->map.columns * SIZE, root->map.lines * SIZE, "so long");
 }
 
 void	load_sprites(t_root *root)
 {
 	int	x;
 	int	y;
-	
+
 	root->sprites.floor = mlx_xpm_file_to_image(root->mlx.ptr, \
 		"./images/floor.xpm", &x, &y);
 	root->sprites.wall = mlx_xpm_file_to_image(root->mlx.ptr, \

@@ -6,13 +6,13 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:48:59 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/28 22:43:39 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 10:57:26 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    move_player(t_root *root, int x, int y)
+void	move_player(t_root *root, int x, int y)
 {
 	if (root->map.map_array[y][x] == COLLECTIBLE)
 	{
@@ -27,7 +27,7 @@ void    move_player(t_root *root, int x, int y)
 	root->map.moves++;
 }
 
-int     check_next_tile(t_root *root, int x, int y)
+int	check_next_tile(t_root *root, int x, int y)
 {
 	if (root->map.map_array[y][x] == WALL)
 		return (0);
@@ -50,7 +50,7 @@ int     check_next_tile(t_root *root, int x, int y)
 	return (0);
 }
 
-int    key_pressed(int key, t_root *root)
+int	key_pressed(int key, t_root *root)
 {
 	if (key == UP || key == W)
 		check_next_tile(root, root->map.x, root->map.y - 1);
@@ -64,7 +64,7 @@ int    key_pressed(int key, t_root *root)
 	{
 		ft_printf("---------\nGAME OVER\n");
 		destroy(root);
-		exit(1);
+		exit(0);
 	}	
 	return (0);
 }

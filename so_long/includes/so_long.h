@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/28 22:40:15 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:03:01 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,19 +85,17 @@ typedef struct s_root
 	t_sprites	sprites;
 }		t_root;
 
-
 // Functions
-
 // MapValidations
 int		map_values(char *str, t_map *map);
 int		extension_validation(char *str);
 int		map_validations(char *str, t_map *map);
 int		path_validation(t_map *map);
-void 	flood_fill(int x, int y, t_map *map, char **map_array2);
+void	flood_fill(int x, int y, t_map *map, char **map_array2);
 
 // Utils
 int		ft_error(char *str);
-void    destroy(t_root *root);
+void	destroy(t_root *root);
 void	map_init(t_map *map);
 void	init_window(t_root *root);
 void	load_sprites(t_root *root);
