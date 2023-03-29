@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:48:59 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 12:56:01 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 22:24:33 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ void	move_player(t_root *root, int x, int y)
 	{
 		root->map.map_array[y][x] = '0';
 		root->map.c++;
+	}
+	if (root->map.map_array[root->map.y][root->map.x] == EXIT)
+	{
+		mlx_put_image_to_window(root->mlx.ptr, \
+			root->mlx.window, root->sprites.player, x * SIZE, y * SIZE);
+		mlx_put_image_to_window(root->mlx.ptr, \
+			root->mlx.window, root->sprites.exit, \
+				root->map.x * SIZE, root->map.y * SIZE);
+		root->map.moves++;
+		return ;	
 	}
 	mlx_put_image_to_window(root->mlx.ptr, \
 		root->mlx.window, root->sprites.player, x * SIZE, y * SIZE);
@@ -40,7 +50,6 @@ int	check_next_tile(t_root *root, int x, int y)
 			ft_printf("---------\n YOU WON\n");
 			destroy(root);
 		}
-		return (0);
 	}
 	move_player(root, x, y);
 	ft_printf("Moves: %d\n", root->map.moves);

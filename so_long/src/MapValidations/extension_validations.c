@@ -6,46 +6,29 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:35:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 13:01:32 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 22:09:04 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ber_validation(char *str, int i)
-{
-	char	*ber_str;
-	char	*ber;
-	int		flag;
-
-	ber = ".ber";
-	ber_str = ft_substr(str, i, 4);
-	flag = ft_strncmp(ber, ber_str, 4);
-	free(ber_str);
-	if (flag == 0)
-		return (1);
-	else
-		return (0);
-}
-
 int	extension_validation(t_root *root, char *str)
 {
-	int	i;
-	int	flag;
+	char	*extension;
+	int		i;
+	int		a;
+	int		c;
 
-	i = 0;
-	while (str)
+	extension = ".ber";
+	i = ft_strlen(str) - 4;
+	a = ft_strlen(str);
+	c = 0;
+	while (i < a)
 	{
-		if (str[i] == '.')
-		{
-			flag = ber_validation(str, i);
-			if (flag == 1)
-				return (0);
-			else
-				ft_error(root, "Map extension is invalid!");
-		}
+		if (extension[c] != str[i])
+			ft_error(root, "Map extension is invalid");
 		i++;
+		c++;
 	}
-	ft_error(root, "Map extension not found.");
 	return (0);
 }
