@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:40:25 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 13:09:24 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 23:04:33 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,11 @@ int	main(int argc, char **argv)
 	load_sprites(&root);
 	game(&root);
 }
+
+/*
+===============================================================
+	Program needs to shut downs when X button is clicked
+===============================================================
+	Check norminette on all files and check .h file
+===============================================================
+*/
