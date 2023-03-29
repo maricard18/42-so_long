@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 10:59:22 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:47:43 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,14 @@ int	path_validation(t_map *map)
 	if (map->c == map->collectibles && map->e == map->exits)
 	{
 		map->c = 0;
+		free(map_array2);
 		return (0);
 	}
 	else
+	{
+		free(map_array2);
 		ft_error("There isn't a way out of this map!");
+	}
 	return (0);
 }
 

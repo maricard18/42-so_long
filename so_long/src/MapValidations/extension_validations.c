@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:35:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/14 12:25:18 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:48:55 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ber_validation(char *str, int i)
 	ber = ".ber";
 	ber_str = ft_substr(str, i, 4);
 	flag = ft_strncmp(ber, ber_str, 4);
+	free(ber_str);
 	if (flag == 0)
 		return (1);
 	else
