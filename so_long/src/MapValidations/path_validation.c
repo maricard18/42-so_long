@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 11:47:43 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 13:06:30 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,30 +40,29 @@ char	**map_duplicate(t_map *map, char **map_array2)
 	return (map_array2);
 }
 
-int	path_validation(t_map *map)
+int	path_validation(t_root *root, t_map *map)
 {
 	int		x;
 	int		y;
+	int		i;
 	char	**map_array2;
 
 	x = map->player_x_position;
 	y = map->player_y_position;
-	map_array2 = malloc(sizeof(char *) * (map->lines + 1));
+	i = 0;
+	map_array2 = ft_calloc((map->lines + 1), sizeof(char *));
 	if (!map_array2)
 		return (0);
 	map_duplicate(map, map_array2);
 	flood_fill(x, y, map, map_array2);
+	free_arrays(map_array2);
 	if (map->c == map->collectibles && map->e == map->exits)
 	{
 		map->c = 0;
-		free(map_array2);
 		return (0);
 	}
 	else
-	{
-		free(map_array2);
-		ft_error("There isn't a way out of this map!");
-	}
+		ft_error(root, "There isn't a way out of this map!");
 	return (0);
 }
 

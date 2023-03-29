@@ -6,7 +6,7 @@
 #    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/03/28 22:13:40 by maricard         ###   ########.fr        #
+#    Updated: 2023/03/29 12:18:54 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,4 +53,8 @@ fclean: clean
 	$(MAKE) fclean -C ./libft
 	$(RM) $(NAME)
 
+leaks:
+#	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(NAME) $(ARGS)
+	valgrind --leak-check=full ./$(NAME) $(ARGS)
+	
 re: fclean all

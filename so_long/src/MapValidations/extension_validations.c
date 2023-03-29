@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:35:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 11:48:55 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 13:01:32 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ber_validation(char *str, int i)
 		return (0);
 }
 
-int	extension_validation(char *str)
+int	extension_validation(t_root *root, char *str)
 {
 	int	i;
 	int	flag;
@@ -42,10 +42,10 @@ int	extension_validation(char *str)
 			if (flag == 1)
 				return (0);
 			else
-				ft_error("Map extension is invalid!");
+				ft_error(root, "Map extension is invalid!");
 		}
 		i++;
 	}
-	ft_error("Map extension not found.");
+	ft_error(root, "Map extension not found.");
 	return (0);
 }

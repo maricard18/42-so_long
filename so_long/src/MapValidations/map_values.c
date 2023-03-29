@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_values.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 08:45:34 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/26 10:22:39 by mario            ###   ########.fr       */
+/*   Updated: 2023/03/29 13:05:59 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	**map_array(int fd, int lines)
 		if (!temp)
 			return (map);
 		map[i] = ft_strtrim(temp, "\n");
+		free(temp);
 		i++;
 	}
 }
@@ -75,7 +76,7 @@ void	characters(t_map *map)
 	}
 }
 
-int	map_values(char *str, t_map *map)
+int	map_values(t_root *root, char *str, t_map *map)
 {
 	int		fd;
 
@@ -88,6 +89,8 @@ int	map_values(char *str, t_map *map)
 	if (fd < 0)
 		return (0);
 	map->map_array = map_array(fd, map->lines);
+	if (map->lines == 0)
+		ft_error(root, "Empty file :(");
 	map->columns = ft_strlen(map->map_array[0]);
 	close(fd);
 	characters(map);

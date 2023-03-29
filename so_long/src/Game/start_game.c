@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:48:59 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 10:57:26 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 12:56:01 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	check_next_tile(t_root *root, int x, int y)
 			ft_printf("Moves: %d\n", root->map.moves);
 			ft_printf("---------\n YOU WON\n");
 			destroy(root);
-			exit(0);
 		}
 		return (0);
 	}
@@ -64,7 +63,6 @@ int	key_pressed(int key, t_root *root)
 	{
 		ft_printf("---------\nGAME OVER\n");
 		destroy(root);
-		exit(0);
 	}	
 	return (0);
 }
