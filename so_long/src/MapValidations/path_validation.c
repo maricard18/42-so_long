@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 13:06:30 by maricard         ###   ########.fr       */
+/*   Updated: 2023/03/29 21:40:02 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,10 @@ int	path_validation(t_root *root, t_map *map)
 {
 	int		x;
 	int		y;
-	int		i;
 	char	**map_array2;
 
 	x = map->player_x_position;
 	y = map->player_y_position;
-	i = 0;
 	map_array2 = ft_calloc((map->lines + 1), sizeof(char *));
 	if (!map_array2)
 		return (0);
