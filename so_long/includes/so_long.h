@@ -6,11 +6,11 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 22:32:14 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:48:39 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	SO_LONG_H
+#ifndef SO_LONG_H
 # define SO_LONG_H
 
 // Libraries

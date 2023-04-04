@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:48:59 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 22:24:33 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:49:57 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	move_player(t_root *root, int x, int y)
 			root->mlx.window, root->sprites.exit, \
 				root->map.x * SIZE, root->map.y * SIZE);
 		root->map.moves++;
-		return ;	
+		return ;
 	}
 	mlx_put_image_to_window(root->mlx.ptr, \
 		root->mlx.window, root->sprites.player, x * SIZE, y * SIZE);
