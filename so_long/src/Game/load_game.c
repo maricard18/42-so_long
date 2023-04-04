@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:55:23 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 10:56:48 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:27:51 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	game(t_root *root)
 {
 	draw_map(root);
 	mlx_hook(root->mlx.window, 2, (1L << 0), key_pressed, root);
+	mlx_hook(root->mlx.window, 17, (1L << 2), close_game, root);
 	mlx_loop(root->mlx.ptr);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:48:59 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/04 11:49:57 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:24:22 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int	key_pressed(int key, t_root *root)
 	{
 		ft_printf("---------\nGAME OVER\n");
 		destroy(root);
-	}	
+	}
 	return (0);
 }

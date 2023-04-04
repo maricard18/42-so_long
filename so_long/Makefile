@@ -6,12 +6,12 @@
 #    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/03/29 22:34:18 by maricard         ###   ########.fr        #
+#    Updated: 2023/04/04 11:53:53 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -g -O0 -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 
 MLX_MACOS = -Lmlx -lmlx -framework OpenGL -framework AppKit
@@ -54,7 +54,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 leaks:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(NAME) $(ARGS)
-#	valgrind --leak-check=full ./$(NAME) $(ARGS)
+	valgrind --leak-check=full ./$(NAME) $(ARGS)
 	
 re: fclean all

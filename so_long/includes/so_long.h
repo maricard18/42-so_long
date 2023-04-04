@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/04 11:48:39 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:27:23 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	flood_fill(int x, int y, t_map *map, char **map_array2);
 
 // Utils
 int		ft_error(t_root *root, char *str);
+int		close_game(t_root *root);
 void	destroy(t_root *root);
 void	free_arrays(char **array);
 void	map_init(t_map *map);

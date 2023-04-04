@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:09:46 by maricard          #+#    #+#             */
-/*   Updated: 2023/03/29 12:55:46 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:29:38 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,11 @@ void	destroy(t_root *root)
 	if (root->sprites.collectible)
 		free(root->mlx.ptr);
 	exit(0);
+}
+
+int	close_game(t_root *root)
+{
+	ft_printf("---------\nGAME OVER\n");
+	destroy(root);
+	return (0);
 }
