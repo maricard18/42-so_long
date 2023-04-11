@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:09:46 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/04 12:29:38 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:03:27 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	free_arrays(char **array)
 
 void	destroy(t_root *root)
 {
-	free_arrays(root->map.map_array);
+	if (root->map.map_array)
+		free_arrays(root->map.map_array);
 	if (root->sprites.collectible)
 		mlx_destroy_image(root->mlx.ptr, root->sprites.collectible);
 	if (root->sprites.collectible)
