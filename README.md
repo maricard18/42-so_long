@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/maricard18/42-so_long/blob/main/extras/so_long.png" alt="so_long">
+    <img src="https://github.com/maricard18/42-so_long/blob/main/extras/so_long.png"  alt="so_long">
 </p>
 
 
