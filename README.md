@@ -7,7 +7,7 @@
 
 This project is about coding our own 2D game. <br>
 I got the chance to create a 2D game that the objective is collect all the milk jugs and left trough the exit. <br>
-This project is in rank 1 of 42 common core and had passed with the score of 100.<br>
+This project is in rank 2 of 42 common core and had passed with the score of 100.<br>
 [-> Subject here](https://github.com/maricard18/42-so_long/blob/main/extras/en.subject.pdf)
 
 
