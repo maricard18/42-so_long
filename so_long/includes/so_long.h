@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:44:39 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/04 12:27:23 by maricard         ###   ########.fr       */
+/*   Updated: 2023/12/08 03:01:35 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <../mlx/mlx.h>
+
+# ifdef __APPLE__
+#  include "../mlx_macos/mlx.h"
+# else
+#  include "../mlx_linux/mlx.h"
+#  include <X11/X.h>
+# endif
 
 // Libft library
 # include "libft.h"
@@ -34,15 +40,27 @@
 # define COLLECTIBLE 'C'
 # define EXIT 'E'
 
-# define ESC 65307
-# define UP 65362
-# define DOWN 65364
-# define LEFT 65361
-# define RIGHT 65363
-# define W 119
-# define S 115
-# define A 97
-# define D 100
+# ifdef __APPLE__
+#  define ESC 53
+#  define UP 126
+#  define DOWN 125
+#  define LEFT 123
+#  define RIGHT 124
+#  define W 13
+#  define A 0
+#  define S 1
+#  define D 2
+# else
+#  define ESC 65307
+#  define UP 65362
+#  define DOWN 65364
+#  define LEFT 65361
+#  define RIGHT 65363
+#  define W 119
+#  define S 115
+#  define A 97
+#  define D 100
+# endif
 
 // Structs
 typedef struct s_map

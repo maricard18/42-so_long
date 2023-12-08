@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:09:46 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/19 14:02:33 by maricard         ###   ########.fr       */
+/*   Updated: 2023/12/08 03:19:59 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	destroy(t_root *root)
 	if (root->mlx.window)
 		mlx_destroy_window(root->mlx.ptr, root->mlx.window);
 	if (root->mlx.ptr)
-		mlx_destroy_display(root->mlx.ptr);
+		//mlx_destroy_display(root->mlx.ptr);
 	if (root->mlx.ptr)
 		free(root->mlx.ptr);
 	exit(0);
